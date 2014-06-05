@@ -1,0 +1,27 @@
+{
+  "name": "kafkacat",
+  "version": "0.0.1",
+  "description": "node wrapper for kafkacat",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/Rafflecopter/node-kafkacat"
+  },
+  "keywords": [
+    "kafka"
+  ],
+  "author": "Justin Ratner <justin@rafflecopter.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rafflecopter/node-kafkacat/issues"
+  },
+  "homepage": "https://github.com/Rafflecopter/node-kafkacat",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "longjohn": "~0.2.4"
+  }
+}
