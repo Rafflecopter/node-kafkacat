@@ -23,7 +23,7 @@ var isBuffered = produceStream.write('howdy\n', 'utf-8', function (err) {
 ```
 
 The mapping of option keys passed to the stream constructor to kafkacat command-line arguments is documented in code [here](https://github.com/Rafflecopter/node-kafkacat/blob/master/lib/opts.js#L8). There are a few things to note: 
- - The consume stream holds the next offset as state, so subsequent calls to `.read` will return new messages. 
- - The argument passed to `.read` overrides `count` set in the options passed to the stream constructor
+ - The consume stream holds the next offset as state, so subsequent calls to `.read` will return new messages. `offset` in the stream constructor options is just the initial offset.
+ - The argument passed to `.read` overrides `count` set in the options passed to the stream constructor.
  - If `count` is not specified, `.read` will collect kafka messages for `timeout` milliseconds before returning. The default can be found in the `opts.js` source.
  - Any extra settings as documented in kafkacat can be passed as well. `node-kafkacat` will take care of formatting them as `-X key=val` when calling kafkacat.
