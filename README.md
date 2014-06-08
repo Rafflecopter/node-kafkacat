@@ -1,8 +1,8 @@
 Requirements
 ============
-Quickly build using the bootsrap script: https://github.com/edenhill/kafkacat[1][2]
+Quickly build using the bootsrap script: https://github.com/edenhill/kafkacat [1][2]
 
-[1]: If you're using OSX, the librdkafka build fails when trying to build its examples. Some work arounds are suggested [here](https://github.com/edenhill/librdkafka/issues/49).
+[1]: If you're using OSX, the librdkafka build fails when trying to build its examples. Some work arounds are suggested [here](https://github.com/edenhill/librdkafka/issues/49).  
 [2]: Also, https://github.com/edenhill/kafkacat/issues/3
 
 Usage
