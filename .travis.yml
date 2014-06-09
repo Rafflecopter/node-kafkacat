@@ -9,6 +9,7 @@ install:
   - ./bin/kafka-topics.sh --zookeeper localhost:2181 --topic foobar --partition 1 --replication-factor 1 --create
   - cd ../
   - wget https://github.com/edenhill/kafkacat/archive/d4d1b89d8654402b20d6eda58bbf19bd20fae491.zip
+  - unzip d4d1b89d8654402b20d6eda58bbf19bd20fae491.zip
   - cd kafkacat-d4d1b89d8654402b20d6eda58bbf19bd20fae491
   - ./bootstrap.sh
   - cd ../
