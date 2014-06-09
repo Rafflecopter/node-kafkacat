@@ -1,29 +1,29 @@
 // Using this script, I'm seeing:
 // [node-kafkacat (master)]$BROKERS=dev.raafl.com:9092 node benchmarks
-// Produced and Consumed 104857632 bytes in 51106 ms. (2052 kB/s)
+// Produced and Consumed 104857632 bytes in 51106 ms. (4219 kB/s)
 
 
 var kafkacat = require('../index')
 
-  , randWord = function (words) {
-    var dwords = ['mouse', 'cup', 'box', 'headphones', 'keyboard', 'screen', 'paper',
-                  'desk', 'bag', 'pillow', 'chair', 'tree', 'car', 'window', 'dog',
-                  'van', 'brick', 'road', 'sun', 'clouds', 'music', 'pants']
-      , pick = function (things) { 
-        return things[Math.floor(Math.random()*things.length)]
-      }
-    return (words ? pick(words) : pick(dwords))
-  }
+  //, randWord = function (words) {
+  //  var dwords = ['mouse', 'cup', 'box', 'headphones', 'keyboard', 'screen', 'paper',
+  //                'desk', 'bag', 'pillow', 'chair', 'tree', 'car', 'window', 'dog',
+  //                'van', 'brick', 'road', 'sun', 'clouds', 'music', 'pants']
+  //    , pick = function (things) { 
+  //      return things[Math.floor(Math.random()*things.length)]
+  //    }
+  //  return (words ? pick(words) : pick(dwords))
+  //}
 
-  , randSentence = function (nWords) {
-    var words = []
+  //, randSentence = function (nWords) {
+  //  var words = []
 
-    for (var k=0; k < nWords; k++) {
-      words.push(randWord())
-    }
+  //  for (var k=0; k < nWords; k++) {
+  //    words.push(randWord())
+  //  }
 
-    return words.join(' ')
-  }
+  //  return words.join(' ')
+  //}
 
   , cOptions =  { brokers: process.env.BROKERS
                 , topic: 'benchmark'
@@ -71,7 +71,7 @@ consumeStream.on('readable', function () {
 _write()
 
 function _write() {
-  var msg = randSentence(nWordsInSentence) + '\n'
+  var msg = "This is a message that we're going to send to kafka. We'll make it about 100 bytes. So, here's some filler.\n"
   produceStream.write(msg, function (err) {
     bytesSent += msg.length
 
