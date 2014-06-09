@@ -30,11 +30,13 @@ tests.txRxOneMsg = function (test) {
                   , topic: 'foobar'
                   , partition: 0
                   , offset: 'end'
+                  , unbuffered: ''
                   }
 
     , pOptions =  { brokers: process.env.BROKERS
                   , topic: 'foobar'
                   , partition: 0
+                  , unbuffered: ''
                   }
 
   var consumeStream = kafkacat.createConsumeStream(cOptions)
