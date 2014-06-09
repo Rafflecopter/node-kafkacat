@@ -6,7 +6,7 @@ install:
   - sleep 3
   - ./bin/kafka-server-start.sh config/server.properties &
   - sleep 5
-  - ./bin/kafka-topics.sh --zookeeper $ZK_HOST --topic foobar --partition 1 --replication-factor 1 --create
+  - ./bin/kafka-topics.sh --zookeeper localhost:2181 --topic foobar --partition 1 --replication-factor 1 --create
   - cd ../
   - git clone git@github.com:edenhill/kafkacat.git
   - cd kafkacat
