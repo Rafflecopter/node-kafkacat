@@ -1,5 +1,5 @@
 install:
-  - mkdir bin
+  - mkdir ~/bin
   - PATH=$PATH:~/bin
   - curl http://mirrors.ibiblio.org/apache/kafka/0.8.1.1/kafka_2.9.2-0.8.1.1.tgz > kafka.tgz
   - tar -xzf kafka.tgz
