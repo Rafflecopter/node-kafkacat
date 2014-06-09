@@ -1,3 +1,5 @@
+https://travis-ci.org/Rafflecopter/node-kafkacat.svg
+
 Requirements
 ============
 Quickly build using the bootsrap script: https://github.com/edenhill/kafkacat [1][2]
