@@ -1,4 +1,6 @@
 install:
+  - mkdir bin
+  - PATH=$PATH:~/bin
   - curl http://mirrors.ibiblio.org/apache/kafka/0.8.1.1/kafka_2.9.2-0.8.1.1.tgz > kafka.tgz
   - tar -xzf kafka.tgz
   - cd kafka_2.9.2-0.8.1.1
@@ -12,8 +14,8 @@ install:
   - unzip d4d1b89d8654402b20d6eda58bbf19bd20fae491.zip
   - cd kafkacat-d4d1b89d8654402b20d6eda58bbf19bd20fae491
   - ./bootstrap.sh
-  - cp kafkacat /usr/bin/kafkacat
-  - kafkakat -h
+  - cp kafkacat ~/bin/kafkacat
+  - kafkacat -h
   - cd ../
   - npm install -g nodeunit
   - npm install
