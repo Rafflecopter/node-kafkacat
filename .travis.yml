@@ -15,7 +15,7 @@ install:
   - cd kafkacat-d4d1b89d8654402b20d6eda58bbf19bd20fae491
   - ./bootstrap.sh
   - cp kafkacat ~/bin/
-  - kafkacat -h
+  - kafkacat -L -b localhost:9092
   - cd ../
   - npm install -g nodeunit
   - npm install
