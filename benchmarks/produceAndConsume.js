@@ -1,4 +1,4 @@
-// Using this script, I'm seeing:
+// Using this script, I'm seeing ~4MB/s:
 // [node-kafkacat (master)]$BROKERS=dev.raafl.com:9092 node benchmarks
 // Produced and Consumed 104857632 bytes in 51106 ms. (4219 kB/s)
 
