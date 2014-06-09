@@ -14,7 +14,7 @@ install:
   - unzip d4d1b89d8654402b20d6eda58bbf19bd20fae491.zip
   - cd kafkacat-d4d1b89d8654402b20d6eda58bbf19bd20fae491
   - ./bootstrap.sh
-  - cp kafkacat ~/bin/kafkacat
+  - cp kafkacat ~/bin/
   - kafkacat -h
   - cd ../
   - npm install -g nodeunit
