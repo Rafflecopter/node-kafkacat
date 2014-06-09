@@ -1,4 +1,4 @@
-https://travis-ci.org/Rafflecopter/node-kafkacat.svg
+[![status](https://travis-ci.org/Rafflecopter/node-kafkacat.svg)](https://travis-ci.org/Rafflecopter/node-kafkacat)
 
 Requirements
 ============
