@@ -29,15 +29,16 @@ var kafkacat = require('../index')
                 , topic: 'benchmark'
                 , partition: 0
                 , offset: 'end'
+                , unbuffered: true
                 }
 
   , pOptions =  { brokers: process.env.BROKERS
                 , topic: 'benchmark'
                 , partition: 0
+                , unbuffered: true
                 }
 
   , approxBytesToSend = 100 * 1024 * 1024
-  , nWordsInSentence = 10
 
 var consumeStream = kafkacat.createConsumeStream(cOptions)
   , produceStream = kafkacat.createProduceStream(pOptions)
@@ -68,13 +69,23 @@ consumeStream.on('readable', function () {
 })
 
 
-_write()
+var msg = "This is a message that we're going to send to kafka. We'll make it about 100 bytes. So, here's some filler.\n"
+  , msgLength = msg.length
 
-function _write() {
-  var msg = "This is a message that we're going to send to kafka. We'll make it about 100 bytes. So, here's some filler.\n"
-  produceStream.write(msg, function (err) {
-    bytesSent += msg.length
-
-    ;(bytesSent < approxBytesToSend) && setImmediate(_write)
-  })
+var checkContinue = function () { 
+  ;(bytesSent < approxBytesToSend) && setImmediate(_write)
 }
+
+var _write = function () {
+  var notBuffered = produceStream.write(msg)
+
+  bytesSent += msgLength
+
+  if (notBuffered) {
+    checkContinue()
+  } else {
+    produceStream.once('drain', checkContinue)
+  }
+}
+
+_write()
