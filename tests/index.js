@@ -30,13 +30,13 @@ tests.txRxOneMsg = function (test) {
                   , topic: 'foobar'
                   , partition: 0
                   , offset: 'end'
-                  , unbuffered: ''
+                  , unbuffered: true // tells kafkacat to use unbuffered I/O. Buffered can present a problem since kafkacat's stdout won't emit data unless a full chunk is ready.
                   }
 
     , pOptions =  { brokers: process.env.BROKERS
                   , topic: 'foobar'
                   , partition: 0
-                  , unbuffered: ''
+                  , unbuffered: true
                   }
 
   var consumeStream = kafkacat.createConsumeStream(cOptions)
