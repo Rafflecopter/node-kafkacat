@@ -1,6 +1,6 @@
 {
   "name": "kafkacat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "node wrapper for kafkacat",
   "main": "index.js",
   "scripts": {
