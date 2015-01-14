@@ -1,6 +1,6 @@
 {
   "name": "kafkacat",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "node wrapper for kafkacat",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,7 @@
     "url": "https://github.com/Rafflecopter/node-kafkacat/issues"
   },
   "homepage": "https://github.com/Rafflecopter/node-kafkacat",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "longjohn": "~0.2.4"
   }
